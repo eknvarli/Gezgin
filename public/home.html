@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gezgin | Home</title>
+    <meta name="description" content="Gezgin. A next-gen tourism tech.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="125" height="125">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto"><li class="nav-item active"></li></ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <a href="/" class="nav-link text-dark underlineHover">Homepage</a>
+                    <a href="/new" class="nav-link text-dark underlineHover">New Posting</a>
+                    <a href="/about" class="nav-link text-dark underlineHover">About</a>
+                  </form>
+                </div>
+              </nav>
+              </div>
+              <div class="trends container w-50" align="center">
+                <h3>Trend Postings</h3>
+                <form action="/search" method="post">
+                  <div class="form-group mb-4">
+                    <nav class="nav justify-content-center">
+                      <div class="nav-link"><input id="exampleFormControlInput1" type="text" placeholder="Enter City / State"  name="city" class="form-control form-control-underlined"></div>
+                      <div class="nav-link"><input id="exampleFormControlInput1" type="text" placeholder="Enter Language(s)."  name="lang" class="form-control form-control-underlined"></div>
+                      <button type="submit" class="nav-link text-dark btn btn-link"><i class="bi bi-search"></i></button>
+                    </nav> 
+                  </div>
+                </form>
+                <br><br>
+                {% for data in datas %}
+                <span align="left">
+                  <li class="post"><a href="/p/{{data[3]}}" class="text-dark" style="text-decoration: none !important">{{data[3]}} | {{data[0]}} {{data[1]}} ({{data[4]}}), {{data[6]}} €
+                  </a></li><br>
+                </span>
+                {% endfor %}
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <span class="footer" align="center">All contents are public. <a href="/">#freesoftware</a></span>
+                <span align="center">
+                  <nav class="form-inline justify-content-center">
+                    <a target="_blank" href="/rss" class="nav-link text-dark underlineHover">RSS</a>
+                    <a target="_blank" href="https://based.cooking" class="nav-link text-dark underlineHover">based.cooking</a>
+                  </nav> 
+                </span> 
+            </div><br><br>
+        <br><br>
+    </div>
+</body>
+</html>

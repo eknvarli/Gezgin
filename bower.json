@@ -1,0 +1,13 @@
+{
+    "name": "gezgin",
+    "version": "1.0.0",
+    "main": "path/to/app.py",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

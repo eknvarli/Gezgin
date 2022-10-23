@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Job Posting | Gezgin</title>
+    <meta name="description" content="Gezgin. A next-gen tourism tech.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="125" height="125">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto"><li class="nav-item active"></li></ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <a href="/" class="nav-link text-dark underlineHover">Homepage</a>
+                    <a href="/new" class="nav-link text-dark underlineHover">New Posting</a>
+                    <a href="/about" class="nav-link text-dark underlineHover">About</a>
+                  </form>
+                </div>
+              </nav>
+            </div>
+              <div class="about container w-50" align="center">
+                <h3>New Posting</h3><br>
+                <span class="new-posting">
+                    <form action="/add" method="post">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="ad">Name</label>
+                            <input type="text" class="form-control" id="ad" name="ad" placeholder="Name">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="soyad">Surname</label>
+                            <input type="text" class="form-control" id="soyad" name="soyad" placeholder="Surname">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="skill">Skills</label>
+                          <input type="text" class="form-control" id="skill" name="skill" placeholder="Skills">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Description</label>
+                          <textarea class="form-control" id="aciklama" name="aciklama" rows="3"></textarea> 
+                        </div>
+                        <div class="form-group">
+                          <label for="yetenek">City / State</label>
+                          <input type="text" class="form-control" id="sehir" name="sehir" placeholder="Ex. Uskudar, Istanbul">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="adress">Contact Address</label>
+                            <input type="text" class="form-control" name="iletisim" id="iletisim">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="adress">Cost (€)</label>
+                            <input type="text" class="form-control" id="ucret" name="ucret">
+                          </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-secondary">Create</button>
+                      </form>
+                    </span>
+                    <br><br>
+                    <br><br>
+        </div>
+    </div>
+</body>
+</html>
