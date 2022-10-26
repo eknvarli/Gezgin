@@ -15,20 +15,37 @@
             <br><br>
             <h3>Applications</h3><br>
             {% for data in datas %}
-            <form action="/approve" method="post">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="dataad" value="{{data[0]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="datasoyad" value="{{data[1]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="datayetenek" value="{{data[2]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="datadesc" value="{{data[3]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="datasehir" value="{{data[4]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="datailetisim" value="{{data[5]}}" readonly aria-describedby="basic-addon2">
-                    <input type="text" class="form-control" name="dataucret" value="{{data[6]}}" readonly aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="submit">Approve</button>
+            <div>
+                <form action="/approve" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="dataad" value="{{data[0]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datasoyad" value="{{data[1]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datayetenek" value="{{data[2]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datadesc" value="{{data[3]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datasehir" value="{{data[4]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datailetisim" value="{{data[5]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="dataucret" value="{{data[6]}}" readonly aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit">Approve</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+                <form action="/remove" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="dataad" value="{{data[0]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datasoyad" value="{{data[1]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datayetenek" value="{{data[2]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datadesc" value="{{data[3]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datasehir" value="{{data[4]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="datailetisim" value="{{data[5]}}" readonly aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="dataucret" value="{{data[6]}}" readonly aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="submit">Remove</button>
+                        </div>
+                    </div>
+                </form>
+                <br><br>
+            </div>
             {% endfor %}
             
         </div>
