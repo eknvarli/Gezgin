@@ -12,6 +12,7 @@ from flask import redirect
 
 # additional modules
 import sqlite3
+import markdown
 import string
 import random
 import time
@@ -173,6 +174,23 @@ def access():
 def rss():
     rss_feed = open('rss.xml', 'r')
     return f'{rss_feed}'
+
+
+@server.route('/wiki')
+def wiki():
+    documents = os.listdir('./docs/')
+    return render_template('wiki.html', docs = documents)
+
+
+@server.route('/wiki/<mdfile>')
+def view_wiki(mdfile):
+    if f'{mdfile}' in os.listdir('./docs/'):
+        file = open(f'./docs/{mdfile}', 'r', encoding='utf-8')
+        line = file.read()
+        output = markdown.markdown(line)
+        return output
+    else:
+        return render_template('404.html')
 
 
 # run app
