@@ -79,8 +79,7 @@
 }
 
 
-.underlineHover {
-        &:after {
+.underlineHover:after {
             display: block;
             left: 0;
             bottom: -10px;
@@ -90,14 +89,13 @@
             content: "";
             transition: width 0.5s;
         }
-        &:hover {
+        .underlineHover:hover {
             color: #0d0d0d;
         }
       
-        &:hover:after{
+        .underlineHover:hover:after{
             width: 100%;
         }
-}
 
 
 .form-control:focus {
@@ -123,12 +121,12 @@
     color: white;
     padding: 10px;
     border: none;
+}
 
-    &:hover {
+.btn-secondary:hover {
         background-color: rgb(60,60,60);
         color: white;
     }
-}
 
 .footer {
     text-align: center !important;
