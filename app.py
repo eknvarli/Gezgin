@@ -133,7 +133,7 @@ def view_panel():
         cursor = connection.cursor()
 
         # admin-login
-        if admin_id == 'memati123':
+        if admin_id == 'ENTER_YOUR_ADMINISTRATOR_PASSWORD':
             cursor.execute('SELECT * FROM basvuru')
             datas = cursor.fetchall()
 
